@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {Button} from "./header"
 import { Section, Container } from "../global"
 
-const Features = () => (
+const About = () => (
   <Section id="features">
     <StyledContainer>
    
@@ -25,7 +25,7 @@ const Features = () => (
   </Section>
 )
 
-export default Features
+export default About
 
 
 
