@@ -18,7 +18,7 @@ const Features = () => (
             
 
           </AboutText>
-          <Button>I want in!</Button>
+          <Button as="a" href="https://sapereaudehq.substack.com/p/coming-soon?r=o30d6&utm_campaign=post&utm_medium=web&utm_source=copy">I want in!</Button>
       </About>
 
     </StyledContainer>

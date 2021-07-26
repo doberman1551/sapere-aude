@@ -38,7 +38,7 @@ const Header = () => {
             </h2>
            
           
-            <Button as="a" href="/thankspage">Get Early Access</Button>
+            <Button as="a" href="https://sapereaudehq.substack.com/p/coming-soon?r=o30d6&utm_campaign=post&utm_medium=web&utm_source=copy">Get Early Access</Button>
            
             </Text>
               
