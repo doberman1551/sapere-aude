@@ -2,20 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
-
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Container } from "../global"
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
+  const data= useStaticQuery(graphql`
+  query Bust{
+  file(relativePath: {eq: "bust.png"}) {
+    childImageSharp {
+      gatsbyImageData(layout:CONSTRAINED quality: 100 )
       }
-    }
+    
+  }
+  }
+  
   `)
 
   const handleSubmit = event => {
@@ -26,30 +26,30 @@ const Header = () => {
     <HeaderWrapper id="top">
       <Container>
         <Flex>
-          <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
+        <HeaderTextGroup>
+          <Text>
             <h1>
-              All your money,
+              Learn
               <br />
-              one account
+              from the people who did it before you..
             </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+              Newsletter to explore the lessons from historical characters and events and how to apply them in our professional and business life. 
             </h2>
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInput placeholder="Your email" />
-              <HeaderButton>Early access</HeaderButton>
-            </HeaderForm>
-            <FormSubtitle>
-              Already have a beta account?{" "}
-              <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
+           
+          
+            <Button as="a" href="/thankspage">Get Early Access</Button>
+           
+            </Text>
+              
           </HeaderTextGroup>
           <ImageWrapper>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+        
+          <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} />
             <br />
           </ImageWrapper>
+
+          
         </Flex>
       </Container>
     </HeaderWrapper>
@@ -59,10 +59,10 @@ const Header = () => {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background-color: #f8f8f8;
-  padding: 160px 0 80px 0;
+  background-color: #fedc5a;
+  padding: 80px 0 80px 0;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+  
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
@@ -73,8 +73,11 @@ const Subtitle = styled.h5`
   margin-bottom: 16px;
 `
 
-const HeaderTextGroup = styled.div`
+const HeaderTextGroup = styled.span`
   margin: 0;
+  padding-top:0rem;
+  display: table;
+
 
   > div {
     width: 120%;
@@ -160,37 +163,31 @@ const HeaderInput = styled.input`
   }
 `
 
-const HeaderButton = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  letter-spacing: 1px;
-  height: 60px;
-  display: block;
-  margin-left: 8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
+export const Button = styled.button`
+  display: inline-block;
+  border-radius: 5px;
+  padding: 16.5px 33px;
+  vertical-align: middle;
+  margin:0,auto;
+  width: 12rem;
   background: ${props => props.theme.color.secondary};
-  border-radius: 4px;
-  padding: 0px 40px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  outline: 0px;
+  color: white;
+  text-decoration: none;
   &:hover {
-    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
+    box-shadow: 12px 12px 2px 1px rgba(74,75,77,1);
+    transform: scale(1.05);
   }
   @media (max-width: ${props => props.theme.screen.md}) {
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-left: 0;
   }
+
 `
 const ImageWrapper = styled.div`
   justify-self: end;
-  align-self: center;
+  align-self: start;
+  padding:80px;
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: center;
   }
@@ -205,4 +202,9 @@ const StyledImage = styled(Img)`
     width: 300px;
     display: none;
   }
+`
+const Text=styled.span`
+ vertical-align:middle;
+  display: table-cell;
+
 `

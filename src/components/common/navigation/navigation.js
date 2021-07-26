@@ -15,7 +15,7 @@ import {
   ActionsContainer,
 } from "./style"
 
-const NAV_ITEMS = ["Features", "Product", "Pricing", ""]
+const NAV_ITEMS = [ ""]
 
 export default class Navigation extends Component {
   state = {
@@ -23,19 +23,9 @@ export default class Navigation extends Component {
     hasScrolled: false,
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
 
-  handleScroll = event => {
-    const scrollTop = window.pageYOffset
 
-    if (scrollTop > 32) {
-      this.setState({ hasScrolled: true })
-    } else {
-      this.setState({ hasScrolled: false })
-    }
-  }
+  
 
   toggleMobileMenu = () => {
     this.setState(prevState => ({ mobileMenuOpen: !prevState.mobileMenuOpen }))
@@ -77,7 +67,7 @@ export default class Navigation extends Component {
           <Brand>
             <Scrollspy offset={-64} item={["top"]} currentClassName="active">
               <AnchorLink href="#top" onClick={this.closeMobileMenu}>
-                Finance
+                Sapere Aude
               </AnchorLink>
             </Scrollspy>
           </Brand>
@@ -96,7 +86,7 @@ export default class Navigation extends Component {
 
           <Mobile hide>{this.getNavList({})}</Mobile>
           <ActionsContainer>
-            <button>Sign up</button>
+           
           </ActionsContainer>
         </StyledContainer>
         <Mobile>

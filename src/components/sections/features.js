@@ -1,101 +1,63 @@
 import React from "react"
 import styled from "styled-components"
-
+import {Button} from "./header"
 import { Section, Container } from "../global"
 
 const Features = () => (
   <Section id="features">
     <StyledContainer>
-      <Subtitle>Features</Subtitle>
-      <SectionTitle>Smart money management</SectionTitle>
-      <FeaturesGrid>
-        <FeatureItem>
-          <FeatureTitle>Notifications</FeatureTitle>
-          <FeatureText>
-            Receive budget and spending alerts based on your favorite triggers.
-          </FeatureText>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureTitle>Security</FeatureTitle>
-          <FeatureText>
-            Your data is always safe with us as we use the latest security
-            protocols.
-          </FeatureText>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureTitle>Automation</FeatureTitle>
-          <FeatureText>
-            Create smart automated workflows and triggers for your money.
-          </FeatureText>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureTitle>Aggregation</FeatureTitle>
-          <FeatureText>
-            Easily link up to 5 banks to your finance account.
-          </FeatureText>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureTitle>Payments</FeatureTitle>
-          <FeatureText>Send money to friends and family with ease.</FeatureText>
-        </FeatureItem>
-        <FeatureItem>
-          <FeatureTitle>Rewards</FeatureTitle>
-          <FeatureText>
-            High interest and rewards for hitting your goals.
-          </FeatureText>
-        </FeatureItem>
-      </FeaturesGrid>
+   
+      <SectionTitle>What it is?</SectionTitle>
+      <About>
+      
+          <AboutText>
+            Sapere Aude (Latin:Dare to learn) is a biweekly newsletter with the aim of exploring the lessons from the past and putting them in a modern context. Read short stories about the deeds and failures of famous and not-so famous people and events. How they tackled the challenges and problems of their day and how you could apply them in your live.
+
+            <br/>  <br/>
+            As an added bonus, you would "wow" your friends on the next trivia night! 
+            
+
+          </AboutText>
+          <Button>I want in!</Button>
+      </About>
+
     </StyledContainer>
   </Section>
 )
 
 export default Features
 
-const StyledContainer = styled(Container)``
+
+
+
+const StyledContainer = styled(Container)`
+`
 
 const SectionTitle = styled.h3`
-  color: ${props => props.theme.color.primary};
+  color: white;
   display: flex;
   justify-content: center;
   margin: 0 auto 40px;
   text-align: center;
 `
 
-const Subtitle = styled.h5`
-  font-size: 16px;
-  color: ${props => props.theme.color.accent};
-  letter-spacing: 0px;
-  margin-bottom: 12px;
-  text-align: center;
-`
-
-const FeaturesGrid = styled.div`
-  max-width: 670px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+const About = styled.div`
+  display: inline-block;
+  text-align:center;
   margin: 0px auto;
-  grid-column-gap: 40px;
-  grid-row-gap: 35px;
+  color: white;
+ 
   @media (max-width: ${props => props.theme.screen.sm}) {
     grid-template-columns: 1fr;
     padding: 0 64px;
   }
 `
 
-const FeatureItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
 
-const FeatureTitle = styled.h4`
-  color: ${props => props.theme.color.primary};
-  letter-spacing: 0px;
-  line-height: 30px;
-  margin-bottom: 10px;
-`
-
-const FeatureText = styled.p`
+const AboutText = styled.p`
   text-align: center;
-`
+  margin:0 auto;
+  color: white;
+  font-size:18px;
+  margin-bottom:1.6rem;
+  `

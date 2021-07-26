@@ -24,11 +24,12 @@ const theme = {
 
   color: {
     primary: "#071435",
-    secondary: "#098c8c",
+    secondary: "#F2534B", //   #035762"
     accent: "#cca86e",
+    whiteText:"ffffff",
     background: {
-      white: "#ffffff",
-      light: "#f8f8f8",
+      dark: "#232323",
+      yellow: "#fedc5a",
     },
     white: {
       regular: "#ffffff",
@@ -51,3 +52,5 @@ const theme = {
 }
 
 export default theme
+
+
