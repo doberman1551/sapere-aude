@@ -8,7 +8,7 @@ const About = () => (
     <StyledContainer>
    
       <SectionTitle>What it is?</SectionTitle>
-      <About>
+      <AboutWrapper>
       
           <AboutText>
             Sapere Aude (Latin:Dare to learn) is a biweekly newsletter with the aim of exploring the lessons from the past and putting them in a modern context. Read short stories about the deeds and failures of famous and not-so famous people and events. How they tackled the challenges and problems of their day and how you could apply them in your live.
@@ -19,7 +19,7 @@ const About = () => (
 
           </AboutText>
           <Button as="a" href="https://sapereaudehq.substack.com/p/coming-soon?r=o30d6&utm_campaign=post&utm_medium=web&utm_source=copy">I want in!</Button>
-      </About>
+      </AboutWrapper>
 
     </StyledContainer>
   </Section>
@@ -41,7 +41,7 @@ const SectionTitle = styled.h3`
   text-align: center;
 `
 
-const About = styled.div`
+const AboutWrapper = styled.div`
   display: inline-block;
   text-align:center;
   margin: 0px auto;
