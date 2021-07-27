@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter SaaS Marketing`,
-    description: `A simple one page marketing starter for saas companies.`,
-    author: `Keegan Burkett`,
+    title: `Sapere Aude Newsletter`,
+    description: `Newsletter to combine history and business.`,
+    author: `Dobromir Kotsev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
